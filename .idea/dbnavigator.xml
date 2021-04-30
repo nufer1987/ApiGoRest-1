@@ -8,6 +8,7 @@
   <component name="DBNavigator.Project.DataExportManager">
     <export-instructions>
       <create-header value="true" />
+      <friendly-headers value="false" />
       <quote-values-containing-separator value="true" />
       <quote-all-values value="false" />
       <value-separator value="" />
@@ -23,17 +24,11 @@
     <autoscroll-to-editor value="false" />
     <autoscroll-from-editor value="true" />
     <show-object-properties value="true" />
-    <loaded-nodes>
-      <connection connection-id="1e30cdcf-c0a0-42da-83cf-6865c1b3b9e2">
-        <schema name="information_schema" object-types="function, view, table" />
-        <schema name="pg_catalog" object-types="function" />
-        <schema name="public" object-types="function, index, column, sequence, dataset trigger, constraint, view, table" />
-      </connection>
-    </loaded-nodes>
+    <loaded-nodes />
   </component>
   <component name="DBNavigator.Project.DatabaseConsoleManager">
     <connection id="1e30cdcf-c0a0-42da-83cf-6865c1b3b9e2">
-      <console name="Connection 2" type="STANDARD" schema="information_schema" session="Main"><![CDATA[katerori ID.si 
+      <console name="Connection 2" type="STANDARD" schema="public" session="Main"><![CDATA[katerori ID.si 
 
 select * from public.categories
 
@@ -77,7 +72,139 @@ select region from "public".suppliers where contact_title ='Owner'
 select product_name, category_name from "public".categories
 join "public".products 
 on "public".categories.category_id = "public".products.category_id
-where category_name = 'Seafood']]></console>
+where category_name = 'Seafood'
+--------------
+
+select now()::date - (select max(order_date) from "public".orders)
+
+-----------------------
+select count (employee_id), employee_id  as total from "public".orders
+group by employee_id
+--having employee_id=4
+
+------------------------
+--ismi 'A' ile başlayan customer.lerin orderlarının gitmiş olduğu city.ler nelerdir 
+--ve kaç çeşit city bulunmaktadır.
+select count(ship_city),ship_city
+from customers
+join  orders
+on orders.customer_id=customers.customer_id
+where company_name like 'A%'
+group  by ship_city
+----------------------------------------------------------------
+--order_price.ı en yüksek 3. ürünü Köln'sehrine sipariş eden customer.lerin contact_title.'ı nelerdir?
+select "public".customers.contact_title
+from "public".order_details
+join  "public".orders
+on order_details.order_id=orders.order_id
+join "public".customers
+on orders.customer_id=customers.customer_id
+where ship_city='Köln'
+order  by unit_price desc limit 1 offset 3;
+------------------------------------------------------------------
+
+select products.product_name, floor(products.unit_price - order_details.unit_price) as asagı,  
+                            ceiling (products.unit_price - order_details.unit_price) as yukarı,
+                            round  (products.unit_price - order_details.unit_price) as yuvarla, 
+                                    (products.unit_price - order_details.unit_price) as gercek
+ "public".territories
+    on "public".region.region_id = "public".territories.region_id
+join "public".employee_territories
+    on "public".employee_territories.territory_id="public".territories.territory_id
+join "public".employees
+    on "public".employees.employee_id="public".employee_territories.employee_id
+join "public".orders
+    on "public".orders.employee_id="public".orders.employee_id
+join "public".order_details
+    on "public".orders.order_id = "public".order_details.order_id
+join products
+    on order_details.product_id=products.product_id        
+join suppliers
+    on products.supplier_id = suppliers.supplier_id
+join categories
+    on categories.category_id = products.product_id       
+join customersfrom region
+join
+    on customers.customer_id = orders.customer_id
+where territories.territory_description='Seattle' and region.region_description='Western' and employees.employee_id>=6;
+    
+-----------------------------------------------------------
+select * from region join
+              (territories,employee_territories,employees)
+              ON (region.region_id=territories.region_id and employee_territories.territory_id= territories.territory_id and 
+              employee_territories.employee_id=employees.employee_id)
+  WHERE employee_territories.employee_id > 0;
+  
+  select city from employees
+
+--------------------
+select count(products.category_id) from products group by category_id order by category_id asc
+
+-------------------------
+products ve categories tablosunda;
+---urun sayisi 10 dan olan az olan kategori lerin isimleri neler.(isimlerinin bulunduu tabloyqa join yap)
+
+select category_name,count ("public".products.units_in_stock)
+from products 
+inner join categories
+on categories.category_id=products.category_id
+where units_in_stock<10
+group by category_name;
+
+------------------------
+select categories.category_name,products.category_id , count(products.category_id)
+from products
+join categories
+on products.category_id = categories.category_id
+group by categories.category_name
+having count(products.category_id) < 10;
+
+-------------------------------------------------------------------
+--Products ve order details  tablosu kullanarak hic satis yapmadigimiz ürünlerin sayinin 0 oldugunu dogrulayin
+
+select * from products
+inner join order_details
+on products.product_id=order_details.product_id
+
+
+
+
+
+
+----------------------------------------------------------------------
+--customers ve orders tablosunu kullanarak sisteme kayit olmus ama hic siparis vermemis kisilerin sayisinin 2 oldugunu dogrulayin
+
+select customers.customer_id,"public".orders.order_id from customers
+join orders
+on customers.customer_id=orders.customer_id;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+-]]></console>
     </connection>
   </component>
   <component name="DBNavigator.Project.DatabaseFileManager">
@@ -122,7 +249,7 @@ where category_name = 'Seafood']]></console>
           <description value="" />
           <database-type value="POSTGRES" />
           <config-type value="BASIC" />
-          <database-version value="13.1" />
+          <database-version value="13.2" />
           <driver-source value="BUILTIN" />
           <driver-library value="" />
           <driver value="" />
@@ -259,8 +386,6 @@ where category_name = 'Seafood']]></console>
           <object-type name="TABLE" enabled="true" />
           <object-type name="VIEW" enabled="true" />
           <object-type name="MATERIALIZED VIEW" enabled="true" />
-          <object-type name="NESTED TABLE" enabled="false" />
-          <object-type name="COLUMN" enabled="false" />
           <object-type name="INDEX" enabled="true" />
           <object-type name="CONSTRAINT" enabled="true" />
           <object-type name="DATASET TRIGGER" enabled="true" />
@@ -271,8 +396,6 @@ where category_name = 'Seafood']]></console>
           <object-type name="FUNCTION" enabled="true" />
           <object-type name="PACKAGE" enabled="true" />
           <object-type name="TYPE" enabled="true" />
-          <object-type name="TYPE ATTRIBUTE" enabled="false" />
-          <object-type name="ARGUMENT" enabled="false" />
           <object-type name="DIMENSION" enabled="false" />
           <object-type name="CLUSTER" enabled="false" />
           <object-type name="DBLINK" enabled="true" />
@@ -335,7 +458,6 @@ where category_name = 'Seafood']]></console>
           <content-type name="JSON" enabled="true" />
           <content-type name="JSON5" enabled="true" />
           <content-type name="Groovy" enabled="true" />
-          <content-type name="AIDL" enabled="true" />
           <content-type name="YAML" enabled="true" />
           <content-type name="Manifest" enabled="true" />
         </content-types>

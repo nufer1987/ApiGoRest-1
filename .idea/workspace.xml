@@ -4,20 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="66526155-93f0-4529-a75e-356124a9c304" name="Default Changelist" comment="token degisti">
-      <change afterPath="$PROJECT_DIR$/.idea/JDBCexecutionWork.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/databaseWork/Ders1.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+    <list default="true" id="66526155-93f0-4529-a75e-356124a9c304" name="Default Changelist" comment="dateutil ekledik">
+      <change afterPath="$PROJECT_DIR$/src/test/java/databaseWork/JavaPostgreSqlWriteImage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/databaseWork/MyException.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dbnavigator.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dbnavigator.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/pojos/UserPojo.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/tests/US_01_Test_GetTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/tests/US_02_Test_PostTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/tests/US_03_Test_PutTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/tests/US_04_Test_DeleteTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/tests/postDeneme.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/utilities/DatabaseConnectorX.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/utilities/DatabaseConnectorX.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/configuration.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/configuration.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/databaseWork/Ders1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/databaseWork/MyException1.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/pojos/User2Pojo.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/utilities/DatabaseConnectorX.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/utilities/DatabaseConnectorV1.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,6 +52,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -68,8 +64,47 @@
       <recent name="C:\Users\samet\IdeaProjects\ApiGoRest\target" />
     </key>
   </component>
-  <component name="RunManager" selected="TestNG.Ders1">
-    <configuration name="Ders1" type="TestNG" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Application.Bouqet">
+    <configuration name="Bouqet" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="databaseWork.sinav.Bouqet" />
+      <module name="JDBCexecutionWork" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="databaseWork.sinav.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="JavaPostgreSqlWriteImage" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="databaseWork.JavaPostgreSqlWriteImage" />
+      <module name="JDBCexecutionWork" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="databaseWork.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MyException" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="databaseWork.MyException" />
+      <module name="JDBCexecutionWork" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="databaseWork.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MyException1" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="JDBCexecutionWork" />
       <extension name="coverage">
         <pattern>
@@ -78,7 +113,7 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="databaseWork" />
-      <option name="MAIN_CLASS_NAME" value="databaseWork.Ders1" />
+      <option name="MAIN_CLASS_NAME" value="databaseWork.MyException1" />
       <option name="TEST_OBJECT" value="CLASS" />
       <properties />
       <listeners />
@@ -86,7 +121,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Ders1.test1" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="MyException1.test3" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="ApiGoRest" />
       <extension name="coverage">
         <pattern>
@@ -95,62 +130,8 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="databaseWork" />
-      <option name="MAIN_CLASS_NAME" value="databaseWork.Ders1" />
-      <option name="METHOD_NAME" value="test1" />
-      <option name="TEST_OBJECT" value="METHOD" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Ders1.test2" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="ApiGoRest" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="databaseWork.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="databaseWork" />
-      <option name="MAIN_CLASS_NAME" value="databaseWork.Ders1" />
-      <option name="METHOD_NAME" value="test2" />
-      <option name="TEST_OBJECT" value="METHOD" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Ders1.test3" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="ApiGoRest" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="databaseWork.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="databaseWork" />
-      <option name="MAIN_CLASS_NAME" value="databaseWork.Ders1" />
+      <option name="MAIN_CLASS_NAME" value="databaseWork.MyException1" />
       <option name="METHOD_NAME" value="test3" />
-      <option name="TEST_OBJECT" value="METHOD" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="postDeneme.post4" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="ApiGoRest" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="tests.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="tests" />
-      <option name="MAIN_CLASS_NAME" value="tests.postDeneme" />
-      <option name="METHOD_NAME" value="post4" />
       <option name="TEST_OBJECT" value="METHOD" />
       <properties />
       <listeners />
@@ -160,11 +141,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="TestNG.Ders1" />
-        <item itemvalue="TestNG.Ders1.test3" />
-        <item itemvalue="TestNG.Ders1.test2" />
-        <item itemvalue="TestNG.Ders1.test1" />
-        <item itemvalue="TestNG.postDeneme.post4" />
+        <item itemvalue="Application.Bouqet" />
+        <item itemvalue="Application.MyException" />
+        <item itemvalue="Application.JavaPostgreSqlWriteImage" />
+        <item itemvalue="TestNG.MyException1" />
+        <item itemvalue="TestNG.MyException1.test3" />
       </list>
     </recent_temporary>
   </component>
@@ -198,7 +179,21 @@
       <option name="project" value="LOCAL" />
       <updated>1611046375884</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="temizlik">
+      <created>1611665708365</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1611665708365</updated>
+    </task>
+    <task id="LOCAL-00005" summary="dateutil ekledik">
+      <created>1611671327090</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1611671327090</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -217,6 +212,8 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="delete method change" />
     <MESSAGE value="token degisti" />
-    <option name="LAST_COMMIT_MESSAGE" value="token degisti" />
+    <MESSAGE value="temizlik" />
+    <MESSAGE value="dateutil ekledik" />
+    <option name="LAST_COMMIT_MESSAGE" value="dateutil ekledik" />
   </component>
 </project>

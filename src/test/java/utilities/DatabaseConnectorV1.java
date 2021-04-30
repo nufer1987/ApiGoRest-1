@@ -5,7 +5,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class DatabaseConnectorX {
+public class DatabaseConnectorV1 {
 
     private static final String dbusername = utilities.ConfigReader.getProperty("databaseUsername");
     private static final String dbpassword = utilities.ConfigReader.getProperty("databasePassword");
